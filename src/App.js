@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import FirstForm from './components/FirstForm';
 
 function App() {
   return (
     <div className="App">
-      <h1>Multi Step form</h1>
+      <FirstForm/>
     </div>
   );
 }
