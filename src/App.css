@@ -1,10 +1,3 @@
-
-.forms{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
 form{
   display: flex;
   flex-direction: column;
@@ -16,14 +9,39 @@ input{
   outline: none;
 }
 
+
+.forms{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.form--1{
+  align-self: center;
+  background-color: rgb(70, 67, 100);
+  height: 50%;
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+
 .form--input{
+  background-color: inherit;
   margin-bottom: 1rem;
   width: 20vw;
   height: 2vh;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  color: white;
 }
 .form--input::placeholder{
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: white;
+  transform: scale(.9);
+  transition: all .4s ease-in-out;
+}
+
+.form--input:focus::placeholder{
+  transform: scale(1);
 }
 
 .btn{
