@@ -6,25 +6,41 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 export default class UserDetailsForm extends Component {
     
-    conitnue = e => {
-        e.preventDefault();
-        this.props.nextStep();
-    }
-    
     render() {
-
-        const { values, handleChange } = this.props;
+        const { values, handleChange, nextStep } = this.props;
 
         return (
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title="Enter User Details"/>
-                    <TextField hintText="First Name" floatingLabelText="First Name" onChange={handleChange} defaultValue={values.firstName}/><br/>
-                    <TextField hintText="Last Name" floatingLabelText="Last Name" onChange={handleChange} defaultValue={values.lastName}/><br/>
-                    <TextField hintText="Email Address" floatingLabelText="Email" onChange={handleChange} defaultValue={values.email}/><br/>
-
+                    <TextField 
+                    hintText="First Name" 
+                    floatingLabelText="First Name" 
+                    onChange={handleChange('firstName')} 
+                    defaultValue={values.firstName}/><br/>
+                    <TextField 
+                    hintText="Last Name" 
+                    floatingLabelText="Last Name" 
+                    onChange={handleChange('lastName')} 
+                    defaultValue={values.lastName}/><br/>
+                    <TextField 
+                    hintText="Email Address" 
+                    floatingLabelText="Email" 
+                    onChange={handleChange('email')} 
+                    defaultValue={values.email}/><br/>
+                    <RaisedButton 
+                    label="Next" 
+                    primary={true} 
+                    style={styles.button} 
+                    onClick={nextStep}/>
                 </React.Fragment>
             </MuiThemeProvider>
         )
+    }
+}
+
+const styles = {
+    button: {
+        margin: 15
     }
 }
