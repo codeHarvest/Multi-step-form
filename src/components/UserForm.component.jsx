@@ -29,8 +29,8 @@ export default class UserForm extends Component {
          });
     }
 
-    handleChange = (e) => {
-        this.setState({ [e.target.name] : e.target.value })
+    handleChange = input => e => {
+        this.setState({ [input] : e.target.value })
     }
 
     render() {
